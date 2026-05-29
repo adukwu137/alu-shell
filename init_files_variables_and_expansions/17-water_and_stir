@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "echo \\$(echo \"obase=8; ibase=5; \\$(echo \"ibase=4; \\$(echo \"\$STIR\" | tr \"ti.itirtrtr\" \"0123313131\")\" | bc) + \\$(echo \"\$WATER\" | tr \"ewwatratewa\" \"01123230101\")\" | bc)\" | bc | tr \"01234567\" \"bestchol\")" | sed "s/./&/" | sh
