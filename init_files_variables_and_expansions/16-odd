@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n '1~2p'
+while read -r odd_line; do echo "$odd_line"; read -r even_line; done
