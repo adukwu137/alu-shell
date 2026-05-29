@@ -1,2 +1,2 @@
 #!/bin/bash
-while read -r odd_line; do echo "$odd_line"; read -r even_line; done
+paste - - | cut -f1
