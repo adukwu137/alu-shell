@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | sed 's|.*/||; s|\.gif$||' | LC_ALL=C sort -f
+while read -r f; do n="${f##*/}"; echo "${n%.gif}"; done < <(find . -type f -name "*.gif") | LC_ALL=C sort -f
