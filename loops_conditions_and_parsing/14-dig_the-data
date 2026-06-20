@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script aggregates, counts, and sorts Apache logs by IP and HTTP code frequency
+
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -rn
