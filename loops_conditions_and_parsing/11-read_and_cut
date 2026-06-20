@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This script reads /etc/passwd and displays specific fields using a while loop
 
+# shellcheck disable=SC2034
 while IFS=':' read -r username password uid gid info home shell
 do
     echo "${username}:${uid}:${home}"
