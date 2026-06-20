@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script manages a PID tracking file and responds distinctively to SIGINT, SIGTERM, and SIGQUIT
+
+PID_FILE="/var/run/myscript.pid"
+
+# Write the script's own PID into the designated path
+echo "$$" > "$PID_FILE"
+
+# Define cleanup sequence for termination signals
+cleanup_and_exit() {
+    rm -f "$PID_FILE"
+    exit 0
+}
+
+# Trap configurations
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'echo "I hate the kill command"; cleanup_and_exit' SIGTERM
+trap 'cleanup_and_exit' SIGQUIT
+
+# Indefinite processing loop
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
