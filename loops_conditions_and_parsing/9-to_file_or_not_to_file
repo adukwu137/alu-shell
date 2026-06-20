@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script inspects a file called 'school' in the current working directory
+
+file="school"
+
+if [ -e "$file" ]
+then
+    echo "school file exists"
+    
+    # Check if file is empty or not
+    if [ -s "$file" ]
+    then
+        echo "school file is not empty"
+    else
+        echo "school file is empty"
+    fi
+    
+    # Check if it is a regular file
+    if [ -f "$file" ]
+    then
+        echo "school is a regular file"
+    fi
+else
+    echo "school file does not exist"
+fi
